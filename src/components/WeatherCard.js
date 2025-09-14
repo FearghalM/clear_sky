@@ -16,7 +16,15 @@ const WeatherCard = ({ weatherData }) => {
         <p className="day">
           {moment().format("dddd")}, {moment().format("LL")}
         </p>
-        <p className="description">{weatherData.weather[0].main}</p>
+        <p className="description">
+          {weatherData.weather[0].main}
+          {/* Weather Icon */}
+          <img
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+            alt={weatherData.weather[0].description}
+            style={{ verticalAlign: "middle", marginLeft: "8px" }}
+          />
+        </p>
       </div>
 
       <div className="row">
