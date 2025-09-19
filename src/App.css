@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  padding: 20px;
+}
+
+.loading {
+  font-size: 20px;
+  color: white;
+  font-family: 'Recursive', sans-serif;
+  margin-top: 50px;
 }
 
 .App-logo {

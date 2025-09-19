@@ -1,10 +1,29 @@
-# Getting Started with Create React App
+# ClearSky
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ClearSky is a React-based weather app that displays current weather conditions and a 5-day forecast. Built with modern JavaScript and responsive design, it fetches live data from a weather API and showcases state management, components, and clean, maintainable code.
+
+## Features
+
+- View current weather by city
+- 5-day weather forecast
+- Responsive design for mobile and desktop
+- Real-time API data fetching
+- Automatic location detection with fallback
+
+## Tech Stack
+
+- **Frontend:** React, JavaScript, HTML5, CSS3  
+- **API:** OpenWeatherMap API
+- **Version Control:** Git/GitHub
+
+## Setup
+
+1. Clone this repository
+2. Install dependencies: `npm install`
+3. Copy `.env.example` to `.env` and add your OpenWeatherMap API key
+4. Start the development server: `npm start`
 
 ## Available Scripts
-
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -39,32 +58,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
+## API Configuration
+
+To use this app, you'll need to get an API key from [OpenWeatherMap](https://openweathermap.org/api):
+
+1. Sign up for a free account
+2. Generate an API key
+3. Add it to your `.env` file as `REACT_APP_API_KEY`
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
