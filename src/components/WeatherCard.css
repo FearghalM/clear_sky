@@ -1,52 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
 
 .card {
-  width: 700px;
-  margin: 20px auto;
-  border-radius: 20px;
-  background-color: #01579b;
-  color: whitesmoke;
+  width: 420px;
+  margin: 32px auto;
+  border-radius: 24px;
+  background: rgba(1, 87, 155, 0.85);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  color: #f5f7fa;
   font-family: 'Recursive', sans-serif;
-  padding: 15px;
+  padding: 28px 32px 24px 32px;
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  transition: box-shadow 0.3s;
 }
 
 .card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #424242;
-  border-radius: 20px 20px 0 0;
-  padding: 10px;
+  background: rgba(33, 33, 33, 0.85);
+  border-radius: 18px 18px 0 0;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
 }
 
 .city {
-  font-size: 24px;
+  font-size: 2rem;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(1,87,155,0.2);
 }
 
 .refresh {
-  background: none;
+  background: rgba(1,87,155,0.15);
   border: none;
   color: #fff;
-  font-size: 22px;
+  font-size: 1.5rem;
   cursor: pointer;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.refresh:hover {
+  background: rgba(1,87,155,0.35);
+  transform: rotate(90deg) scale(1.1);
 }
 
 .row {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  align-items: center;
+  padding: 14px 0 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.row:last-child {
+  border-bottom: none;
 }
 
 .temp,
 .day,
 .sun,
 .description {
-  font-size: 18px;
+  font-size: 1.1rem;
+  margin: 0 8px 0 0;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.description img {
+  vertical-align: middle;
+  margin-left: 8px;
+  width: 38px;
+  height: 38px;
+  filter: drop-shadow(0 2px 6px rgba(1,87,155,0.18));
 }
 
 .loading {
-  font-size: 20px;
+  font-size: 1.2rem;
   text-align: center;
   margin-top: 50px;
+  color: #fff;
+}
+
+/* Add subtle fade-in animation */
+.card {
+  animation: fadeInCard 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
