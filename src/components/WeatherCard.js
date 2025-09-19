@@ -19,7 +19,7 @@ const WeatherCard = ({ weatherData, units, showDetails, onOptionChange, onRefres
             <option value="fahrenheit">Show °F</option>
             <option value="details">{showDetails ? 'Hide Details' : 'More Details'}</option>
           </select>
-          <button className="refresh" onClick={onRefresh}>⟳</button>
+          <button type="button" className="refresh" onClick={onRefresh}>⟳</button>
         </div>
       </div>
 
