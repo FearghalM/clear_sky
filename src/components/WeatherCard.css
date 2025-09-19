@@ -115,3 +115,31 @@
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Responsive styles for laptop screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .card {
+    width: 600px;
+    padding: 36px 48px 32px 48px;
+    font-size: 1.15rem;
+  }
+  .city {
+    font-size: 2.4rem;
+  }
+  .row {
+    padding: 18px 0 12px 0;
+  }
+  .description img {
+    width: 48px;
+    height: 48px;
+  }
+  .options-dropdown {
+    font-size: 1.1rem;
+    padding: 10px 22px 10px 14px;
+  }
+  .refresh {
+    font-size: 1.8rem;
+    width: 44px;
+    height: 44px;
+  }
+}
