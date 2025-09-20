@@ -1,6 +1,26 @@
-# Getting Started with Create React App
+# Clear Sky Weather App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+- **Current Location Weather**: Automatically detects your location using geolocation API
+- **City Search with Auto-complete**: Search for weather in any city worldwide with intelligent auto-complete suggestions
+- **Temperature Units**: Toggle between Celsius and Fahrenheit
+- **Detailed Weather Info**: View additional details like feels-like temperature, pressure, and wind speed
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Create a `.env` file based on `.env.example`
+4. Get an API key from [OpenWeatherMap](https://openweathermap.org/api) and add it to your `.env` file:
+   ```
+   REACT_APP_API_URL=https://api.openweathermap.org/data/2.5
+   REACT_APP_API_KEY=your_openweathermap_api_key_here
+   ```
+5. Start the development server: `npm start`
 
 ## Available Scripts
 
