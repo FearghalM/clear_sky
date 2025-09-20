@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+.search-bar-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 20px auto;
+  font-family: 'Recursive', sans-serif;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  background: rgba(1, 87, 155, 0.85);
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-input-container:focus-within {
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.4);
+}
+
+.search-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: none;
+  background: transparent;
+  color: #f5f7fa;
+  font-size: 1rem;
+  font-family: 'Recursive', sans-serif;
+  outline: none;
+  letter-spacing: 0.2px;
+}
+
+.search-input::placeholder {
+  color: rgba(245, 247, 250, 0.6);
+}
+
+.search-button {
+  background: rgba(1, 87, 155, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  background: rgba(1, 87, 155, 0.35);
+  transform: scale(1.05);
+}
+
+.suggestions-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(1, 87, 155, 0.95);
+  border-radius: 0 0 12px 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-top: none;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 12px 18px;
+  color: #f5f7fa;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.2s ease;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.suggestion-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item.loading {
+  color: rgba(245, 247, 250, 0.7);
+  cursor: default;
+  font-style: italic;
+}
+
+.suggestion-item.no-results {
+  color: rgba(245, 247, 250, 0.5);
+  cursor: default;
+  font-style: italic;
+}
+
+/* Responsive styles for laptop screens */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .search-bar-container {
+    max-width: 600px;
+  }
+  
+  .search-input {
+    font-size: 1.1rem;
+    padding: 16px 22px;
+  }
+  
+  .search-button {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+  }
+  
+  .suggestion-item {
+    padding: 14px 22px;
+    font-size: 1rem;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .search-bar-container {
+    margin: 16px auto;
+    max-width: 90%;
+  }
+  
+  .search-input {
+    font-size: 0.9rem;
+    padding: 12px 16px;
+  }
+  
+  .search-button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  
+  .suggestion-item {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}

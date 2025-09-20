@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import WeatherCard from "./components/WeatherCard";
+import SearchBar from "./components/SearchBar";
 import "./App.css";
 
 function App() {
@@ -10,8 +11,11 @@ function App() {
   const [units, setUnits] = useState('metric'); // 'metric' for °C, 'imperial' for °F
   const [showDetails, setShowDetails] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [useGeolocation, setUseGeolocation] = useState(true);
 
   useEffect(() => {
+    if (!useGeolocation) return;
+    
     if (!('geolocation' in navigator)) {
       setGeoError('Geolocation is not supported by your browser.');
       return;
@@ -27,17 +31,21 @@ function App() {
         setGeoError('Unable to retrieve your location.');
       }
     );
-  }, []);
+  }, [useGeolocation]);
 
-  const fetchData = async (overrideUnits) => {
-    if (lat && long) {
+  const fetchData = async (overrideUnits, customLat, customLong) => {
+    const latitude = customLat || lat;
+    const longitude = customLong || long;
+    
+    if (latitude && longitude) {
       setLoading(true);
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=${overrideUnits || units}&APPID=${process.env.REACT_APP_API_KEY}`
+          `${process.env.REACT_APP_API_URL}/weather/?lat=${latitude}&lon=${longitude}&units=${overrideUnits || units}&APPID=${process.env.REACT_APP_API_KEY}`
         );
         const result = await response.json();
         setData(result);
+        setGeoError(null);
       } catch (e) {
         setGeoError('Failed to fetch weather data.');
       }
@@ -65,8 +73,20 @@ function App() {
     fetchData();
   };
 
+  const handleLocationSelect = (location) => {
+    setLat(location.lat);
+    setLong(location.lon);
+    setUseGeolocation(false);
+    // Fetch weather data for the selected location
+    fetchData(null, location.lat, location.lon);
+  };
+
   return (
     <div className="App">
+      <SearchBar 
+        onLocationSelect={handleLocationSelect}
+        apiKey={process.env.REACT_APP_API_KEY}
+      />
       {geoError ? (
         <p className="error">{geoError}</p>
       ) : loading ? (
